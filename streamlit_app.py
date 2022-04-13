@@ -114,12 +114,12 @@ if len(countries_in_subset) != len(countries):
         missing = set(countries) - set(countries_in_subset)
         st.write("No data available for " + ", ".join(missing) + ".")
 
-bar_chart = alt.Chart(subset).mark_rect().encode(
-    x=alt.X("Age", sort=ages),
+bar_chart = alt.Chart(subset).mark_bar().encode(
+    x=alt.X("Pop:Q"),
     y=alt.Y("Country"),
-    color=alt.Color("Rate:Q", title = "Population Size", scale=alt.Scale(type='log', domain=(0.01, 1000), clamp=True)),
-    tooltip=["Rate"],
+    color=alt.Color("Pop:Q", title = "Population Size"),
+    tooltip=["Pop"],
 ).properties(
-    title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
+    title=f"Population size of countries for {'males' if sex == 'M' else 'females'} in {year}",
 )
 st.altair_chart(bar_chart, use_container_width=True)

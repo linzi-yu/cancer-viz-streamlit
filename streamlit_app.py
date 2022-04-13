@@ -95,7 +95,7 @@ ages = [
 #select an age group
 # create an altair selector for age selection
 age_selection = alt.selection_single(
-    fields='Age'
+    fields='ages'
 )
 
 chart = alt.Chart(subset).mark_rect().encode(

@@ -54,7 +54,17 @@ subset = subset[subset["Sex"] == sex]
 ### P2.3 ###
 # replace with st.multiselect
 # (hint: can use current hard-coded values below as as `default` for selector)
-countries = [
+countries =  = st.multiselect(
+     'Countries',
+     [
+    "Austria",
+    "Germany",
+    "Iceland",
+    "Spain",
+    "Sweden",
+    "Thailand",
+    "Turkey",],
+     [
     "Austria",
     "Germany",
     "Iceland",
@@ -62,14 +72,18 @@ countries = [
     "Sweden",
     "Thailand",
     "Turkey",
-]
+])
+
+
 subset = subset[subset["Country"].isin(countries)]
 ### P2.3 ###
 
 
 ### P2.4 ###
 # replace with st.selectbox
-cancer = "Malignant neoplasm of stomach"
+cancer = st.selectbox(
+     'Cancer',
+     ('cancer1', 'cancer2'))
 subset = subset[subset["Cancer"] == cancer]
 ### P2.4 ###
 

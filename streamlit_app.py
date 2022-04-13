@@ -114,7 +114,7 @@ if len(countries_in_subset) != len(countries):
         missing = set(countries) - set(countries_in_subset)
         st.write("No data available for " + ", ".join(missing) + ".")
 
-chart = alt.Chart(subset).mark_rect().encode(
+bar_chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
     y=alt.Y("Country"),
     color=alt.Color("Rate:Q", title = "Population Size", scale=alt.Scale(type='log', domain=(0.01, 1000), clamp=True)),

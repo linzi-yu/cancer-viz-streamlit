@@ -1,7 +1,6 @@
 # bmi706-2022-ps3
 
-Hello, world!
-
+Hello, Linzi!
 
 ## Requirements
 
@@ -12,7 +11,7 @@ Please make sure to have the following downloaded and installed on your machine 
 - [Anaconda](https://docs.anaconda.com/anaconda/install/)
 
 > If you have a preferred text editor and/or know how to manage python virtual environments, please view these requirements
-as recommendations.
+> as recommendations.
 
 ### Getting started
 
@@ -41,10 +40,10 @@ Selecting a file from the sidebar will open the file in the editor where you are
 
 #### Committing changes
 
-A *commit* is a snapshot of the state of your repository at a specific time. Git keeps track of history of
+A _commit_ is a snapshot of the state of your repository at a specific time. Git keeps track of history of
 your repository via commits so that you can revert back to a prior version at any time. In order to
-synchronize your local changes with the fork on GitHub, you will need to create a *new commit* 
-adding the changes you've made. 
+synchronize your local changes with the fork on GitHub, you will need to create a _new commit_
+adding the changes you've made.
 
 Let's practice making a commit by replacing "Hello, world" with "Hello, `<your name>`" at the top of this file.
 
@@ -52,15 +51,15 @@ Let's practice making a commit by replacing "Hello, world" with "Hello, `<your n
 
 <img width="1024" src="https://user-images.githubusercontent.com/24403730/162011100-fa0bfa15-001d-43bf-aa7a-ce6fd406e58a.png">
 
-- Replace `world` at the top of the file with *your name* and save the file.
+- Replace `world` at the top of the file with _your name_ and save the file.
 
 <img width="1024" src="https://user-images.githubusercontent.com/24403730/162011310-65828f46-b4a1-4d35-a74d-6aa2c54f260b.png">
 
-> Note how the file tab for `README.md` is now yellow with an "M", signifing that it has been modified. The **Source Control** icon in the 
+> Note how the file tab for `README.md` is now yellow with an "M", signifing that it has been modified. The **Source Control** icon in the
 > sidebar additionally has shows a `1`, indicating that `1` file has changed.
 
-- Click the **Source Control** icon in the sidebar and enter *Message* describing the changes we've made. Click the 
-"Commit" check mark to stage and commit our changes.
+- Click the **Source Control** icon in the sidebar and enter _Message_ describing the changes we've made. Click the
+  "Commit" check mark to stage and commit our changes.
 
 <img width="1024" src="https://user-images.githubusercontent.com/24403730/162014900-e4d99a32-390a-4259-a56d-5f6e5e8d65fb.png">
 
@@ -68,23 +67,21 @@ Let's practice making a commit by replacing "Hello, world" with "Hello, `<your n
 
 <img width="1024" src="https://user-images.githubusercontent.com/24403730/162014837-42f21bf3-bc97-4e56-bdca-bec6d3af9828.png">
 
-
 ### Developing with `streamlit`
 
 You'll need to set up a Python environment for working your Streamlit application locally. Streamlit's only officially-supported environment
-manager on Windows, macOS, and linux is [Anaconda Navigator](https://docs.anaconda.com/anaconda/navigator/). Please make sure you 
+manager on Windows, macOS, and linux is [Anaconda Navigator](https://docs.anaconda.com/anaconda/navigator/). Please make sure you
 have this installed. (The following is adapted from Streamlit's [documentation](https://docs.streamlit.io/library/get-started/installation).)
 
 #### Create a new Python environment with Streamlit
 
 1.) Follow the steps provided by Anaconda to
-[set up and manage your environment](https://docs.anaconda.com/anaconda/navigator/getting-started/#managing-environments) 
+[set up and manage your environment](https://docs.anaconda.com/anaconda/navigator/getting-started/#managing-environments)
 using the Anaconda Navigator.
 
 2.) Select the "▶" icon next to your new environment. Then select "Open terminal":
 
 <img width="1024" src="https://i.stack.imgur.com/EiiFc.png">
-
 
 3.) In the terminal that appears, type:
 
@@ -99,7 +96,6 @@ streamlit hello
 ```
 
 Streamlit's Hello app should appear in a new tab in your web browser.
-
 
 #### Use your new environment
 

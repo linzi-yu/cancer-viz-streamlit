@@ -31,7 +31,11 @@ df = load_data()
 st.write("## Age-specific cancer mortality rates")
 
 ### P2.1 ###
-st.slider( "Year", min_value=df['Year'].min(), max_value=df['Year'].max(), step=1)
+# min_value=df['Year'].min()
+# max_value=df['Year'].max()
+# st.slider( "Year", min_value, max_value)
+age = st.slider('How old are you?', 0, 130, 25)
+st.write("I'm ", age, 'years old')
 year = 2012
 subset = df[df["Year"] == year]
 ### P2.1 ###

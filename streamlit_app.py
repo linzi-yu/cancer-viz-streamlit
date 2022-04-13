@@ -56,14 +56,7 @@ subset = subset[subset["Sex"] == sex]
 # (hint: can use current hard-coded values below as as `default` for selector)
 countries = st.multiselect(
      'Countries',
-     [
-    "Austria",
-    "Germany",
-    "Iceland",
-    "Spain",
-    "Sweden",
-    "Thailand",
-    "Turkey",],
+     df["Country"].unique(),
      [
     "Austria",
     "Germany",

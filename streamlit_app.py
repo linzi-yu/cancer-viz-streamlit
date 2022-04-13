@@ -34,7 +34,7 @@ st.write("## Age-specific cancer mortality rates")
 # min_value=min(df['Year'])
 # max_value=max(df['Year'])
 # st.slider( "Year", min_value, max_value)
-st.slider( "Year", 1994, 2020)
+st.slider( "Year", 1994, 2020, 2012)
 # st.slider('How old are you?', 0, 130, 25)
 
 year = 2012

@@ -123,7 +123,6 @@ subset = subset[subset["Age"] == age]
 bar_chart = alt.Chart(subset).mark_bar().encode(
     x=alt.X("Pop:Q"),
     y=alt.Y("Country"),
-    color=alt.Color("Pop:Q", title = "Population Size"),
     tooltip=["Pop"],
 ).properties(
     title=f"Population size for {'males' if sex == 'M' else 'females'} in {year}",

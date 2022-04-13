@@ -115,11 +115,10 @@ if len(countries_in_subset) != len(countries):
         st.write("No data available for " + ", ".join(missing) + ".")
 
 #select an age group
-age_selection = alt.selection_single(
-    fields=['Age'], bind='legend'
-)
-
-subset = subset[subset["Age"]==age_selection]
+age = st.selectbox(
+     'Age Group',
+     ages)
+subset = subset[subset["Age"] == age]
 
 bar_chart = alt.Chart(subset).mark_bar().encode(
     x=alt.X("Pop:Q"),
@@ -128,11 +127,5 @@ bar_chart = alt.Chart(subset).mark_bar().encode(
     tooltip=["Pop"],
 ).properties(
     title=f"Population size for {'males' if sex == 'M' else 'females'} in {year}",
-).transform_filter(
-     #update donut chart based on legend selector
-    age_selection
-).add_selection(
-    #add the altair selector to the bar chart legend
-    age_selection
 )
 st.altair_chart(bar_chart, use_container_width=True)

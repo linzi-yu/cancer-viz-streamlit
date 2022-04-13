@@ -119,6 +119,7 @@ age_selection = alt.selection_single(
     fields=['Age'], bind='legend'
 )
 
+subset = subset[subset["Age"].isin(age_selection)]
 
 bar_chart = alt.Chart(subset).mark_bar().encode(
     x=alt.X("Pop:Q"),

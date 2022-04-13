@@ -92,12 +92,20 @@ ages = [
     "Age 55-64",
     "Age >64",
 ]
+#select an age group
+# create an altair selector for age selection
+age_selection = alt.selection_single(
+    fields='Age', bind='scales'
+)
 
 chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
     y=alt.Y("Country"),
     color=alt.Color("Rate:Q", title = "Mortality rate per 100k", scale=alt.Scale(type='log', domain=(0.01, 1000), clamp=True)),
     tooltip=["Rate"],
+).add_selection(
+    #add the altair selector to the heatmap scale
+    age_selection
 ).properties(
     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
 )
@@ -114,16 +122,14 @@ if len(countries_in_subset) != len(countries):
         missing = set(countries) - set(countries_in_subset)
         st.write("No data available for " + ", ".join(missing) + ".")
 
-#select an age group
-age = st.selectbox(
-     'Age Group',
-     ages)
-subset = subset[subset["Age"] == age]
 
 bar_chart = alt.Chart(subset).mark_bar().encode(
     x=alt.X("Pop:Q"),
     y=alt.Y("Country"),
     tooltip=["Pop"],
+).transform_filter(
+     #update donut chart based on scale selector in heatmap
+    age_selection
 ).properties(
     title=f"Population size for {'males' if sex == 'M' else 'females'} in {year}",
 )

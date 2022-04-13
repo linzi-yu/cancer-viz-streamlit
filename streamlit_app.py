@@ -28,13 +28,14 @@ def load_data():
 
 df = load_data()
 
-### P1.2 ###
-
-
 st.write("## Age-specific cancer mortality rates")
 
 ### P2.1 ###
-# replace with st.slider
+st.slider(
+     "Year",
+     df['Year'].max(),
+     df['Year'].min(),
+     2012)
 year = 2012
 subset = df[df["Year"] == year]
 ### P2.1 ###

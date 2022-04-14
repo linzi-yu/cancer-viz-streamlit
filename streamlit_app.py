@@ -117,15 +117,6 @@ chart = base.mark_rect().encode(
 # st.altair_chart(chart, use_container_width=True)
 
 
-countries_in_subset = subset["Country"].unique()
-if len(countries_in_subset) != len(countries):
-    if len(countries_in_subset) == 0:
-        st.write("No data avaiable for given subset.")
-    else:
-        missing = set(countries) - set(countries_in_subset)
-        st.write("No data available for " + ", ".join(missing) + ".")
-
-
 bar_chart = base.mark_bar().encode(
     x=alt.X("Pop:Q", stack=True),
     y=alt.Y("Country"),
@@ -139,3 +130,11 @@ bar_chart = base.mark_bar().encode(
 
 bonus_chart = alt.vconcat(chart, bar_chart)
 st.altair_chart(bonus_chart, use_container_width=True)
+
+countries_in_subset = subset["Country"].unique()
+if len(countries_in_subset) != len(countries):
+    if len(countries_in_subset) == 0:
+        st.write("No data avaiable for given subset.")
+    else:
+        missing = set(countries) - set(countries_in_subset)
+        st.write("No data available for " + ", ".join(missing) + ".")

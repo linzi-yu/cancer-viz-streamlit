@@ -112,7 +112,7 @@ chart = base.mark_rect().encode(
 )
 ### P2.5 ###
 
-st.altair_chart(chart, use_container_width=True)
+# st.altair_chart(chart, use_container_width=True)
 
 
 countries_in_subset = subset["Country"].unique()
@@ -128,9 +128,6 @@ bar_chart = alt.Chart(subset).mark_bar().encode(
     x=alt.X("Pop:Q"),
     y=alt.Y("Country"),
     tooltip=["Pop"],
-).add_selection(
-    #add the altair selector to the heatmap scale
-    age_selection
 ).transform_filter(
      #update donut chart based on scale selector in heatmap
     age_selection
@@ -138,5 +135,5 @@ bar_chart = alt.Chart(subset).mark_bar().encode(
     title=f"Population size for {'males' if sex == 'M' else 'females'} in {year}",
 )
 
-
-st.altair_chart(bar_chart, use_container_width=True)
+bonus_chart = alt.hconcat(chart, bar_chart)
+st.altair_chart(bonus_chart, use_container_width=True)

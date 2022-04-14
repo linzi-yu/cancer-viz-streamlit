@@ -127,7 +127,7 @@ if len(countries_in_subset) != len(countries):
 
 
 bar_chart = base.mark_bar().encode(
-    x=alt.X("Pop:Q"),
+    x=alt.X("Pop:Q", stack=True),
     y=alt.Y("Country"),
     tooltip=["Age","Pop"],
 ).transform_filter(

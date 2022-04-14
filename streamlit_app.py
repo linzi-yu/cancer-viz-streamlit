@@ -125,6 +125,7 @@ bar_chart = base.mark_bar().encode(
      #update donut chart based on scale selector in heatmap
     age_selection
 ).properties(
+    width=440,
     title=f"Population size of each country for {'males' if sex == 'M' else 'females'} in {year}",
 )
 

@@ -118,7 +118,7 @@ chart = base.mark_rect().encode(
 
 
 bar_chart = base.mark_bar().encode(
-    x=alt.X("Pop:Q", stack=True),
+    x=alt.X("Pop:Q", stack=True, title = "Population"),
     y=alt.Y("Country"),
     tooltip=["Age","Pop"],
 ).transform_filter(

@@ -104,6 +104,7 @@ chart = base.mark_rect().encode(
     y=alt.Y("Country"),
     color=alt.Color("Rate:Q", title = "Mortality rate per 100k", scale=alt.Scale(type='log', domain=(0.01, 1000), clamp=True)),
     tooltip=["Rate"],
+    opacity=alt.condition(age_selection, alt.value(1), alt.value(0.2))
 ).add_selection(
     #add the altair selector to the heatmap scale
     age_selection
@@ -124,15 +125,15 @@ if len(countries_in_subset) != len(countries):
         st.write("No data available for " + ", ".join(missing) + ".")
 
 
-bar_chart = alt.Chart(subset).mark_bar().encode(
+bar_chart = base.mark_bar().encode(
     x=alt.X("Pop:Q"),
     y=alt.Y("Country"),
-    tooltip=["Pop"],
+    tooltip=["Age","Pop"],
 ).transform_filter(
      #update donut chart based on scale selector in heatmap
     age_selection
 ).properties(
-    title=f"Population size for {'males' if sex == 'M' else 'females'} in {year}",
+    title=f"Population size of each country for {'males' if sex == 'M' else 'females'} in {year}",
 )
 
 bonus_chart = alt.hconcat(chart, bar_chart)

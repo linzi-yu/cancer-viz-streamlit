@@ -109,7 +109,7 @@ chart = base.mark_rect().encode(
     #add the altair selector to the heatmap scale
     age_selection
 ).properties(
-    width=350
+    width=350,
     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
 )
 ### P2.5 ###

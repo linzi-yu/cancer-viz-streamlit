@@ -113,7 +113,7 @@ chart = base.mark_rect().encode(
 )
 ### P2.5 ###
 
-st.altair_chart(chart, use_container_width=True)
+# st.altair_chart(chart, use_container_width=True)
 
 
 countries_in_subset = subset["Country"].unique()
@@ -136,5 +136,5 @@ bar_chart = base.mark_bar().encode(
     title=f"Population size of each country for {'males' if sex == 'M' else 'females'} in {year}",
 )
 
-# bonus_chart = alt.concat(chart, bar_chart)
-st.altair_chart(bar_chart, use_container_width=True)
+bonus_chart = alt.vconcat(chart, bar_chart)
+st.altair_chart(bonus_chart, use_container_width=True)
